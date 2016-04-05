@@ -1,0 +1,7 @@
+/home/dieter/Projects/Ubiety.Dns/DnsTest/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/dieter/Projects/Ubiety.Dns/DnsTest/bin/Debug/DnsTest.exe.mdb
+/home/dieter/Projects/Ubiety.Dns/DnsTest/bin/Debug/DnsTest.exe
+/home/dieter/Projects/Ubiety.Dns/DnsTest/obj/Debug/DnsTest.exe
+/home/dieter/Projects/Ubiety.Dns/DnsTest/obj/Debug/DnsTest.exe.mdb
+/home/dieter/Projects/Ubiety.Dns/DnsTest/bin/Debug/Ubiety.Dns.dll
+/home/dieter/Projects/Ubiety.Dns/DnsTest/bin/Debug/Ubiety.Dns.dll.mdb

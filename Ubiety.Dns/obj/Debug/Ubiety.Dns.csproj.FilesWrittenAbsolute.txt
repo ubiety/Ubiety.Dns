@@ -1,0 +1,5 @@
+/home/dieter/Projects/Ubiety.Dns/Ubiety.Dns/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/dieter/Projects/Ubiety.Dns/Ubiety.Dns/bin/Debug/Ubiety.Dns.dll.mdb
+/home/dieter/Projects/Ubiety.Dns/Ubiety.Dns/bin/Debug/Ubiety.Dns.dll
+/home/dieter/Projects/Ubiety.Dns/Ubiety.Dns/obj/Debug/Ubiety.Dns.dll
+/home/dieter/Projects/Ubiety.Dns/Ubiety.Dns/obj/Debug/Ubiety.Dns.dll.mdb
