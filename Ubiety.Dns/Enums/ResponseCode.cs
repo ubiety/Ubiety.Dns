@@ -1,6 +1,6 @@
 ﻿namespace Ubiety.Dns.Enums
 {
-    public enum RCode
+    public enum ResponseCode
     {
         NoError = 0,
         FormError = 1,

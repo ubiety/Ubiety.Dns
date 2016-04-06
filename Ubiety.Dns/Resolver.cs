@@ -160,7 +160,7 @@ namespace Ubiety.Dns
             if (response.Questions.Count == 0)
                 return;
 
-            if (response.Header.RCode != RCode.NoError)
+            if (response.Header.RCode != ResponseCode.NoError)
                 return;
 
             Question question = response.Questions[0];
@@ -265,12 +265,12 @@ namespace Ubiety.Dns
                             stream.Read(incomingData, 0, length);
                             var response = new Response(_dnsServers[j], incomingData);
 
-                            if (response.Header.RCode != RCode.NoError) 
+                            if (response.Header.RCode != ResponseCode.NoError) 
                             {
                                 return response;
                             }
 
-                            if (response.Questions[0].QType != QType.AXFR) 
+                            if (response.Questions[0].QType != QueryType.AXFR) 
                             {
                                 AddToCache(response);
                                 return response;
@@ -335,7 +335,7 @@ namespace Ubiety.Dns
             return response;
         }
 
-        public Response Query(string name, QType qtype, QClass qclass)
+        public Response Query(string name, QueryType qtype, QueryClass qclass)
         {
             var question = new Question(name, qtype, qclass);
             Response response = SearchCache(question);
@@ -349,9 +349,9 @@ namespace Ubiety.Dns
             return GetResponse(request);
         }
 
-        public Response Query(string name, QType qtype)
+        public Response Query(string name, QueryType qtype)
         {
-            var question = new Question(name, qtype, QClass.IN);
+            var question = new Question(name, qtype, QueryClass.IN);
             Response response = SearchCache(question);
             if (response != null)
             {

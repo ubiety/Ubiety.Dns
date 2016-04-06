@@ -2,7 +2,7 @@
 
 namespace Ubiety.Dns.Records
 {
-    public class AAAA : Record
+    public class AAAA : BaseRecord
     {
         public IPAddress Address;
 

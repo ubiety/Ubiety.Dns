@@ -1,6 +1,6 @@
 ﻿namespace Ubiety.Dns.Enums
 {
-    public enum QType : ushort
+    public enum QueryType : ushort
     {
         A = DnsType.A,         // a IPV4 host address
         NS = DnsType.NS,       // an authoritative name server

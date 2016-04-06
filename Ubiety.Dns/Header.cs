@@ -139,11 +139,11 @@ namespace Ubiety.Dns
             }
         }
 
-        public RCode RCode
+        public ResponseCode RCode
         {
             get
             {
-                return (RCode)_flags.GetBits(0, 4);
+                return (ResponseCode)_flags.GetBits(0, 4);
             }
 
             set

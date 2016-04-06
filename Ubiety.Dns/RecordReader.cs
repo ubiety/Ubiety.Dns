@@ -104,7 +104,7 @@ namespace Ubiety.Dns
             return list.ToArray();
         }
 
-        public Record ReadRecord(DnsType type)
+        public BaseRecord ReadRecord(DnsType type)
         {
             switch (type)
             {

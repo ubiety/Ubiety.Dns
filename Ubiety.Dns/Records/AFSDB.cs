@@ -1,6 +1,6 @@
 ﻿namespace Ubiety.Dns.Records
 {
-    public class AFSDB : Record
+    public class AFSDB : BaseRecord
     {
         public ushort SubType;
         public string Hostname;

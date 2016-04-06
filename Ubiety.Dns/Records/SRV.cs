@@ -1,6 +1,6 @@
 ﻿namespace Ubiety.Dns.Records
 {
-    public class SRV : Record
+    public class SRV : BaseRecord
     {
         public ushort Priority;
         public ushort Weight;

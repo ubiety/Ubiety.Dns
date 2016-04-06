@@ -8,7 +8,7 @@ namespace Ubiety.Dns
     {
         string _qName;
 
-        public Question(string qName, QType qType, QClass qClass)
+        public Question(string qName, QueryType qType, QueryClass qClass)
         {
             QName = qName;
             QType = qType;
@@ -18,8 +18,8 @@ namespace Ubiety.Dns
         public Question(RecordReader reader)
         {
             QName = reader.ReadDomainName();
-            QType = (QType)reader.ReadUInt16();
-            QClass = (QClass)reader.ReadUInt16();
+            QType = (QueryType)reader.ReadUInt16();
+            QClass = (QueryClass)reader.ReadUInt16();
         }
 
         public string QName
@@ -37,13 +37,13 @@ namespace Ubiety.Dns
             }
         }
 
-        public QType QType
+        public QueryType QType
         {
             get;
             set;
         }
 
-        public QClass QClass
+        public QueryClass QClass
         {
             get;
             set;

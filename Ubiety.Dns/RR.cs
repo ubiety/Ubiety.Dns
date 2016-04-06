@@ -11,7 +11,7 @@ namespace Ubiety.Dns
         public DnsClass Class;
         public int TimeLived;
         public ushort RDLength;
-        public Record Record;
+        public BaseRecord Record;
 
         uint _ttl;
 
