@@ -219,8 +219,6 @@ namespace Ubiety.Dns
 
         Response TcpRequest(Request request)
         {
-            var responseMessage = new byte[512];
-
             for (int i = 0; i < _retries; i++)
             {
                 for (int j = 0; j < _dnsServers.Count; j++) 
