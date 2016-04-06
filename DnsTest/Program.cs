@@ -25,7 +25,7 @@ namespace DnsTest
             Console.WriteLine();
 
             var resolver = new Resolver();
-            Response response = resolver.Query(args[0], QType.A);
+            Response response = resolver.Query(args[0], QueryType.A);
 
             Console.WriteLine("A Record for " + args[0] + ":");
             if (!string.IsNullOrEmpty(response.Error))

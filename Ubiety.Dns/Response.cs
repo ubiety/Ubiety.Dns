@@ -1,4 +1,19 @@
-﻿using System;
+﻿//
+//  Copyright 2016  Dieter Lunn
+//
+//    Licensed under the Apache License, Version 2.0 (the "License");
+//    you may not use this file except in compliance with the License.
+//    You may obtain a copy of the License at
+//
+//        http://www.apache.org/licenses/LICENSE-2.0
+//
+//    Unless required by applicable law or agreed to in writing, software
+//    distributed under the License is distributed on an "AS IS" BASIS,
+//    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//    See the License for the specific language governing permissions and
+//    limitations under the License.
+
+using System;
 using System.Collections.Generic;
 using System.Net;
 using Ubiety.Dns.Records;
@@ -9,11 +24,11 @@ namespace Ubiety.Dns
 	{
         public List<Question> Questions;
 
-        public List<AnswerRR> Answers;
+        public List<AnswerResourceRecord> Answers;
 
-        public List<AuthorityRR> Authorities;
+        public List<AuthorityResourceRecord> Authorities;
 
-        public List<AdditionalRR> Additionals;
+        public List<AdditionalResourceRecord> Additionals;
 
         public Header Header;
 
@@ -28,9 +43,9 @@ namespace Ubiety.Dns
 		public Response ()
 		{
             Questions = new List<Question>();
-            Answers = new List<AnswerRR>();
-            Authorities = new List<AuthorityRR>();
-            Additionals = new List<AdditionalRR>();
+            Answers = new List<AnswerResourceRecord>();
+            Authorities = new List<AuthorityResourceRecord>();
+            Additionals = new List<AdditionalResourceRecord>();
 
             Server = new IPEndPoint(0, 0);
             Error = "";
@@ -48,9 +63,9 @@ namespace Ubiety.Dns
             var reader = new RecordReader(data);
 
             Questions = new List<Question>();
-            Answers = new List<AnswerRR>();
-            Authorities = new List<AuthorityRR>();
-            Additionals = new List<AdditionalRR>();
+            Answers = new List<AnswerResourceRecord>();
+            Authorities = new List<AuthorityResourceRecord>();
+            Additionals = new List<AdditionalResourceRecord>();
 
             Header = new Header(reader);
 
@@ -61,25 +76,25 @@ namespace Ubiety.Dns
 
             for (int i = 0; i < Header.anCount; i++)
             {
-                Answers.Add(new AnswerRR(reader));
+                Answers.Add(new AnswerResourceRecord(reader));
             }
 
             for (int i = 0; i < Header.nsCount; i++)
             {
-                Authorities.Add(new AuthorityRR(reader));
+                Authorities.Add(new AuthorityResourceRecord(reader));
             }
 
             for (int i = 0; i < Header.arCount; i++)
             {
-                Additionals.Add(new AdditionalRR(reader));
+                Additionals.Add(new AdditionalResourceRecord(reader));
             }
         }
 
-        public RR[] RecordsRR
+        public ResourceRecord[] RecordsRR
         {
             get
             {
-                var list = new List<RR>();
+                var list = new List<ResourceRecord>();
                 foreach (var record in Answers)
                 {
                     list.Add(record);

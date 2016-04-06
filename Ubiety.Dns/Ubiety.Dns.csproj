@@ -37,7 +37,6 @@
     <Compile Include="Response.cs" />
     <Compile Include="Question.cs" />
     <Compile Include="Header.cs" />
-    <Compile Include="RR.cs" />
     <Compile Include="RecordReader.cs" />
     <Compile Include="Extensions\UshortExtensions.cs" />
     <Compile Include="Enums\OPCode.cs" />
@@ -53,6 +52,7 @@
     <Compile Include="Enums\QueryType.cs" />
     <Compile Include="Enums\ResponseCode.cs" />
     <Compile Include="Records\BaseRecord.cs" />
+    <Compile Include="ResourceRecord.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
