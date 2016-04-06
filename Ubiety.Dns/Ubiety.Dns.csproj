@@ -47,14 +47,14 @@
     <Compile Include="Enums\RCode.cs" />
     <Compile Include="Enums\OPCode.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
-    <Compile Include="Enums\Type.cs" />
-    <Compile Include="Enums\Class.cs" />
     <Compile Include="Records\Record.cs" />
     <Compile Include="Records\A.cs" />
     <Compile Include="Records\AAAA.cs" />
     <Compile Include="Records\AFSDB.cs" />
     <Compile Include="Records\SRV.cs" />
     <Compile Include="Request.cs" />
+    <Compile Include="Enums\DnsClass.cs" />
+    <Compile Include="Enums\DnsType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

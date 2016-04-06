@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Text;
 using System.Collections.Generic;
+using Ubiety.Dns.Records;
+using Ubiety.Dns.Enums;
 
 namespace Ubiety.Dns
 {
@@ -100,6 +102,21 @@ namespace Ubiety.Dns
             }
 
             return list.ToArray();
+        }
+
+        public Record ReadRecord(DnsType type)
+        {
+            switch (type)
+            {
+                case DnsType.A:
+                    return new A(this);
+                case DnsType.AAAA:
+                    return new AAAA(this);
+                case DnsType.SRV:
+                    return new SRV(this);
+                default:
+                    return null;
+            }
         }
     }
 }

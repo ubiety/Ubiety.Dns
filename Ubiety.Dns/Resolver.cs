@@ -286,7 +286,7 @@ namespace Ubiety.Dns
                             transferResponse.Authorities.AddRange(response.Authorities);
                             transferResponse.Additionals.AddRange(response.Additionals);
 
-                            if (response.Answers[0].Type == Ubiety.Dns.Enums.Type.SOA) {
+                            if (response.Answers[0].Type == DnsType.SOA) {
                                 soa++;
                             }
 

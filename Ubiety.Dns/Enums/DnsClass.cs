@@ -1,6 +1,6 @@
 ﻿namespace Ubiety.Dns.Enums
 {
-    public enum Class : ushort
+    public enum DnsClass : ushort
     {
         IN = 1,             // the Internet
         CS = 2,             // the CSNET class (Obsolete - used only for examples in some obsolete RFCs)

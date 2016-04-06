@@ -7,8 +7,8 @@ namespace Ubiety.Dns
     public class RR
     {
         public string Name;
-        public Ubiety.Dns.Enums.Type Type;
-        public Class Class;
+        public DnsType Type;
+        public DnsClass Class;
         public int TimeLived;
         public ushort RDLength;
         public Record Record;
@@ -19,9 +19,12 @@ namespace Ubiety.Dns
         {
             TimeLived = 0;
             Name = reader.ReadDomainName();
-            Type = (Ubiety.Dns.Enums.Type)reader.ReadUInt16();
-            Class = (Class)reader.ReadUInt16();
+            Type = (DnsType)reader.ReadUInt16();
+            Class = (DnsClass)reader.ReadUInt16();
             TTL = reader.ReadUInt32();
+            RDLength = reader.ReadUInt16();
+            Record = reader.ReadRecord(Type);
+            Record.RR = this;
         }
 
         public uint TTL
