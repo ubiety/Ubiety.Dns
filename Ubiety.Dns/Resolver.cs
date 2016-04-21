@@ -25,6 +25,9 @@ using Ubiety.Dns.Enums;
 
 namespace Ubiety.Dns
 {
+    /// <summary>
+    /// Retrieves information from a DNS server based on the type of data requested.
+    /// </summary>
     public class Resolver
     {
         private readonly List<IPEndPoint> _dnsServers;
@@ -32,6 +35,10 @@ namespace Ubiety.Dns
         private int _retries;
         private ushort _unique;
 
+        /// <summary>
+        /// Creates a new Resolver class.
+        /// </summary>
+        /// <param name="dnsServers">DNS servers to search</param>
         public Resolver(IEnumerable<IPEndPoint> dnsServers)
         {
             _responseCache = new Dictionary<string, Response>();
@@ -45,16 +52,31 @@ namespace Ubiety.Dns
             TransportType = TransportType.Udp;
         }
 
+        /// <summary>
+        /// Creates a new Resolver class with default system DNS servers
+        /// </summary>
         public Resolver() : this(GetDnsServers())
         {
         }
 
+        /// <summary>
+        /// Default DNS port
+        /// </summary>
         public static int DefaultPort => 53;
 
+        /// <summary>
+        /// Library version
+        /// </summary>
         public string Version => Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
+        /// <summary>
+        /// DNS lookup timeout in milliseconds
+        /// </summary>
         public int Timeout { get; set; }
 
+        /// <summary>
+        /// Number of times to retry DNS query
+        /// </summary>
         public int Retries
         {
             get { return _retries; }
@@ -66,10 +88,19 @@ namespace Ubiety.Dns
             }
         }
 
+        /// <summary>
+        /// Query domain recursively
+        /// </summary>
         public bool Recursion { get; set; }
 
+        /// <summary>
+        /// Type of transport to use. Either TCP or UDP.
+        /// </summary>
         public TransportType TransportType { get; set; }
 
+        /// <summary>
+        /// DNS servers to search
+        /// </summary>
         public IPEndPoint[] DnsServers
         {
             get { return _dnsServers.ToArray(); }
@@ -81,8 +112,15 @@ namespace Ubiety.Dns
             }
         }
 
+        /// <summary>
+        /// Cache DNS results
+        /// </summary>
         public bool UseCache { get; set; }
 
+        /// <summary>
+        /// Get default DNS servers from host system
+        /// </summary>
+        /// <returns>DNS server addresses from host</returns>
         public static IEnumerable<IPEndPoint> GetDnsServers()
         {
             var list = new List<IPEndPoint>();
@@ -251,6 +289,13 @@ namespace Ubiety.Dns
             return response;
         }
 
+        /// <summary>
+        /// Query DNS server for information
+        /// </summary>
+        /// <param name="name">Domain name to lookup</param>
+        /// <param name="qtype">Type of information requested</param>
+        /// <param name="qclass">Class of information</param>
+        /// <returns>DNS records applying to searched domain</returns>
         public Response Query(string name, QueryType qtype, QueryClass qclass)
         {
             var question = new Question(name, qtype, qclass);
@@ -265,6 +310,12 @@ namespace Ubiety.Dns
             return GetResponse(request);
         }
 
+        /// <summary>
+        /// Query DNS server for information with class set to Internet
+        /// </summary>
+        /// <param name="name">Domain name to lookup</param>
+        /// <param name="qtype">Type of information requested</param>
+        /// <returns>DNS records applying to searched domain</returns>
         public Response Query(string name, QueryType qtype)
         {
             var question = new Question(name, qtype, QueryClass.IN);
@@ -281,6 +332,9 @@ namespace Ubiety.Dns
 
         #region Cache Methods
 
+        /// <summary>
+        /// Clears internal cache
+        /// </summary>
         public void ClearCache()
         {
             lock (_responseCache)
