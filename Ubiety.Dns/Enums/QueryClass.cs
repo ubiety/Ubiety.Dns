@@ -15,13 +15,30 @@
 
 namespace Ubiety.Dns.Enums
 {
+    /// <summary>
+    /// Query class types
+    /// </summary>
     public enum QueryClass : ushort
     {
-        IN = DnsClass.IN, // the Internet
-        CS = DnsClass.CS, // the CSNET class (Obsolete - used only for examples in some obsolete RFCs)
-        CH = DnsClass.CH, // the CHAOS class
-        HS = DnsClass.HS, // Hesiod [Dyer 87]
-
-        ANY = 255 // any class
+        /// <summary>
+        /// Internet
+        /// </summary>
+        IN = DnsClass.IN,
+        /// <summary>
+        /// CSNET (Obsolete)
+        /// </summary>
+        CS = DnsClass.CS,
+        /// <summary>
+        /// CHAOS
+        /// </summary>
+        CH = DnsClass.CH,
+        /// <summary>
+        /// Hesiod [Dyer 87]
+        /// </summary>
+        HS = DnsClass.HS,
+        /// <summary>
+        /// Any class
+        /// </summary>
+        ANY = 255
     }
 }
