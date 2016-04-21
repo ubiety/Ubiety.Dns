@@ -18,11 +18,16 @@ using Ubiety.Dns.Enums;
 
 namespace Ubiety.Dns
 {
+    /// <summary>
+    ///     DNS Request
+    /// </summary>
     public class Request
     {
         private readonly List<Question> _questions;
-        public readonly Header Header;
 
+        /// <summary>
+        /// Creates a new instance of the Request class
+        /// </summary>
         public Request()
         {
             Header = new Header
@@ -34,6 +39,14 @@ namespace Ubiety.Dns
             _questions = new List<Question>();
         }
 
+        /// <summary>
+        /// DNS header for this request
+        /// </summary>
+        public Header Header { get; }
+
+        /// <summary>
+        /// Request in byte format
+        /// </summary>
         public byte[] Data
         {
             get
@@ -50,6 +63,10 @@ namespace Ubiety.Dns
             }
         }
 
+        /// <summary>
+        /// Add question to the request
+        /// </summary>
+        /// <param name="question">Question for query</param>
         public void AddQuestion(Question question)
         {
             _questions.Add(question);
