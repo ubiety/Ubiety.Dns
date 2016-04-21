@@ -19,12 +19,15 @@ namespace Ubiety.Dns.Records
 {
     public class A : BaseRecord
     {
-        public readonly IPAddress Address;
+        private readonly IPAddress _address;
 
         public A(RecordReader reader)
         {
-            IPAddress.TryParse($"{reader.ReadByte()}.{reader.ReadByte()}.{reader.ReadByte()}.{reader.ReadByte()}", out Address);
+            IPAddress.TryParse($"{reader.ReadByte()}.{reader.ReadByte()}.{reader.ReadByte()}.{reader.ReadByte()}",
+                out _address);
         }
+
+        public IPAddress Address => _address;
 
         public override string ToString()
         {
@@ -32,4 +35,3 @@ namespace Ubiety.Dns.Records
         }
     }
 }
-

@@ -17,7 +17,7 @@ namespace Ubiety.Dns.Records
 {
     public abstract class BaseRecord
     {
-        public ResourceRecord RR;
+        public ResourceRecord ResourceRecord;
     }
 }
 

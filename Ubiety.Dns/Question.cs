@@ -41,7 +41,7 @@ namespace Ubiety.Dns
         {
             get { return _qName; }
 
-            set
+            private set
             {
                 _qName = value;
                 if (!_qName.EndsWith("."))
@@ -49,11 +49,11 @@ namespace Ubiety.Dns
             }
         }
 
-        public QueryType QType { get; set; }
+        public QueryType QType { get; }
 
-        public QueryClass QClass { get; set; }
+        public QueryClass QClass { get; }
 
-        public byte[] Data
+        public IEnumerable<byte> Data
         {
             get
             {

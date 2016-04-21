@@ -17,11 +17,6 @@ namespace Ubiety.Dns.Records
 {
     public class SRV : BaseRecord
     {
-        public readonly ushort Priority;
-        public readonly ushort Weight;
-        public readonly ushort Port;
-        public readonly string Target;
-
         public SRV(RecordReader reader)
         {
             Priority = reader.ReadUInt16();
@@ -30,10 +25,14 @@ namespace Ubiety.Dns.Records
             Target = reader.ReadDomainName();
         }
 
+        public ushort Priority { get; }
+        public ushort Weight { get; }
+        public ushort Port { get; }
+        public string Target { get; }
+
         public override string ToString()
         {
             return $"{Priority} {Weight} {Port} {Target}";
         }
     }
 }
-

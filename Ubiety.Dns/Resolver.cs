@@ -83,7 +83,7 @@ namespace Ubiety.Dns
 
         public bool UseCache { get; set; }
 
-        public static IPEndPoint[] GetDnsServers()
+        public static IEnumerable<IPEndPoint> GetDnsServers()
         {
             var list = new List<IPEndPoint>();
 
@@ -154,7 +154,6 @@ namespace Ubiety.Dns
 
                             if (!success || !client.Connected)
                             {
-                                //client.Close();
                                 continue;
                             }
 
@@ -176,7 +175,6 @@ namespace Ubiety.Dns
 
                                     if (length <= 0)
                                     {
-                                        //client.Close();
                                         throw new SocketException();
                                     }
 

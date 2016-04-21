@@ -38,7 +38,7 @@ namespace Ubiety.Dns
             TTL = reader.ReadUInt32();
             RecordLength = reader.ReadUInt16();
             Record = reader.ReadRecord(Type);
-            Record.RR = this;
+            Record.ResourceRecord = this;
         }
 
         public uint TTL

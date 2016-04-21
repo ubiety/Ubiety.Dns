@@ -17,14 +17,14 @@ namespace Ubiety.Dns.Records
 {
     public class AFSDB : BaseRecord
     {
-        public readonly ushort SubType;
-        public readonly string Hostname;
-
         public AFSDB(RecordReader reader)
         {
             SubType = reader.ReadUInt16();
             Hostname = reader.ReadDomainName();
         }
+
+        public ushort SubType { get; }
+        public string Hostname { get; }
 
         public override string ToString()
         {
@@ -32,4 +32,3 @@ namespace Ubiety.Dns.Records
         }
     }
 }
-
