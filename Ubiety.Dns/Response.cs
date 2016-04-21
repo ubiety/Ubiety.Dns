@@ -23,15 +23,15 @@ namespace Ubiety.Dns
 {
     public class Response
     {
-        public List<AdditionalResourceRecord> Additionals;
-        public List<AnswerResourceRecord> Answers;
-        public List<AuthorityResourceRecord> Authorities;
+        public readonly List<AdditionalResourceRecord> Additionals;
+        public readonly List<AnswerResourceRecord> Answers;
+        public readonly List<AuthorityResourceRecord> Authorities;
         public string Error;
-        public Header Header;
+        public readonly Header Header;
         public int MessageSize;
-        public List<Question> Questions;
-        public IPEndPoint Server;
-        public DateTime Timestamp;
+        public readonly List<Question> Questions;
+        public readonly IPEndPoint Server;
+        public readonly DateTime Timestamp;
 
         public Response()
         {
@@ -62,28 +62,28 @@ namespace Ubiety.Dns
 
             Header = new Header(reader);
 
-            for (var i = 0; i < Header.qdCount; i++)
+            for (var i = 0; i < Header.QuestionCount; i++)
             {
                 Questions.Add(new Question(reader));
             }
 
-            for (var i = 0; i < Header.anCount; i++)
+            for (var i = 0; i < Header.AnswerCount; i++)
             {
                 Answers.Add(new AnswerResourceRecord(reader));
             }
 
-            for (var i = 0; i < Header.nsCount; i++)
+            for (var i = 0; i < Header.AuthorityCount; i++)
             {
                 Authorities.Add(new AuthorityResourceRecord(reader));
             }
 
-            for (var i = 0; i < Header.arCount; i++)
+            for (var i = 0; i < Header.AdditionalsCount; i++)
             {
                 Additionals.Add(new AdditionalResourceRecord(reader));
             }
         }
 
-        public ResourceRecord[] AllResourceRecords
+        public IEnumerable<ResourceRecord> AllResourceRecords
         {
             get
             {

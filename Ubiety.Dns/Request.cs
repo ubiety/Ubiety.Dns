@@ -21,14 +21,14 @@ namespace Ubiety.Dns
     public class Request
     {
         private readonly List<Question> _questions;
-        public Header Header;
+        public readonly Header Header;
 
         public Request()
         {
             Header = new Header
             {
                 OPCode = OPCode.Query,
-                qdCount = 0
+                QuestionCount = 0
             };
 
             _questions = new List<Question>();
@@ -39,7 +39,7 @@ namespace Ubiety.Dns
             get
             {
                 var data = new List<byte>();
-                Header.qdCount = (ushort) _questions.Count;
+                Header.QuestionCount = (ushort) _questions.Count;
                 data.AddRange(Header.Data);
                 foreach (var question in _questions)
                 {

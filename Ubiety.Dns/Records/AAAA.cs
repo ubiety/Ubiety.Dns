@@ -19,7 +19,7 @@ namespace Ubiety.Dns.Records
 {
     public class AAAA : BaseRecord
     {
-        public IPAddress Address;
+        public readonly IPAddress Address;
 
         public AAAA(RecordReader reader)
         {

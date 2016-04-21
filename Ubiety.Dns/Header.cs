@@ -23,12 +23,6 @@ namespace Ubiety.Dns
     {
         private readonly ushort _flags;
 
-        public ushort anCount;
-        public ushort arCount;
-        public ushort Id;
-        public ushort nsCount;
-        public ushort qdCount;
-
         public Header()
         {
         }
@@ -37,11 +31,17 @@ namespace Ubiety.Dns
         {
             Id = reader.ReadUInt16();
             _flags = reader.ReadUInt16();
-            qdCount = reader.ReadUInt16();
-            anCount = reader.ReadUInt16();
-            nsCount = reader.ReadUInt16();
-            arCount = reader.ReadUInt16();
+            QuestionCount = reader.ReadUInt16();
+            AnswerCount = reader.ReadUInt16();
+            AuthorityCount = reader.ReadUInt16();
+            AdditionalsCount = reader.ReadUInt16();
         }
+
+        public ushort AnswerCount { get; set; }
+        public ushort AdditionalsCount { get; set; }
+        public ushort Id { get; set; }
+        public ushort AuthorityCount { get; set; }
+        public ushort QuestionCount { get; set; }
 
         public byte[] Data
         {
@@ -50,10 +50,10 @@ namespace Ubiety.Dns
                 var data = new List<byte>();
                 data.AddRange(Id.Write());
                 data.AddRange(_flags.Write());
-                data.AddRange(qdCount.Write());
-                data.AddRange(anCount.Write());
-                data.AddRange(nsCount.Write());
-                data.AddRange(arCount.Write());
+                data.AddRange(QuestionCount.Write());
+                data.AddRange(AnswerCount.Write());
+                data.AddRange(AuthorityCount.Write());
+                data.AddRange(AdditionalsCount.Write());
 
                 return data.ToArray();
             }

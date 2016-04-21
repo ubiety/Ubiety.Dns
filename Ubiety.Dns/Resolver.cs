@@ -27,7 +27,6 @@ namespace Ubiety.Dns
 {
     public class Resolver
     {
-        public const int DefaultPort = 53;
         private readonly List<IPEndPoint> _dnsServers;
         private readonly Dictionary<string, Response> _responseCache;
         private int _retries;
@@ -49,6 +48,8 @@ namespace Ubiety.Dns
         public Resolver() : this(GetDnsServers())
         {
         }
+
+        public static int DefaultPort => 53;
 
         public string Version => Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
@@ -87,7 +88,15 @@ namespace Ubiety.Dns
             var list = new List<IPEndPoint>();
 
             var adapters = NetworkInterface.GetAllNetworkInterfaces();
-            foreach (var entry in from n in adapters where n.OperationalStatus == OperationalStatus.Up select n.GetIPProperties() into props from address in props.DnsAddresses select new IPEndPoint(address, DefaultPort) into entry where !list.Contains(entry) select entry)
+            foreach (var entry in from n in adapters
+                where n.OperationalStatus == OperationalStatus.Up
+                select n.GetIPProperties()
+                into props
+                from address in props.DnsAddresses
+                select new IPEndPoint(address, DefaultPort)
+                into entry
+                where !list.Contains(entry)
+                select entry)
             {
                 list.Add(entry);
             }
@@ -103,28 +112,25 @@ namespace Ubiety.Dns
             {
                 foreach (var t in _dnsServers)
                 {
-                    var socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
-                    socket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReceiveTimeout, Timeout*1000);
+                    using (var socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp))
+                    {
+                        socket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReceiveTimeout, Timeout * 1000);
 
-                    try
-                    {
-                        socket.SendTo(request.Data, t);
-                        var received = socket.Receive(responseMessage);
-                        var data = new byte[received];
-                        Array.Copy(responseMessage, data, received);
-                        var response = new Response(t, data);
-                        AddToCache(response);
+                        try
+                        {
+                            socket.SendTo(request.Data, t);
+                            var received = socket.Receive(responseMessage);
+                            var data = new byte[received];
+                            Array.Copy(responseMessage, data, received);
+                            var response = new Response(t, data);
+                            AddToCache(response);
 
-                        return response;
-                    }
-                    catch (SocketException)
-                    {
-                    }
-                    finally
-                    {
-                        _unique++;
-                        socket.Close();
-                        socket.Dispose();
+                            return response;
+                        }
+                        finally
+                        {
+                            _unique++;
+                        }
                     }
                 }
             }
@@ -139,87 +145,85 @@ namespace Ubiety.Dns
             {
                 foreach (var dnsServer in _dnsServers)
                 {
-                    var client = new TcpClient {ReceiveTimeout = Timeout*1000};
-
-                    try
+                    using (var client = new TcpClient { ReceiveTimeout = Timeout * 1000 })
                     {
-                        var result = client.BeginConnect(dnsServer.Address, dnsServer.Port, null, null);
-                        var success = result.AsyncWaitHandle.WaitOne(Timeout*1000, true);
-
-                        if (!success || !client.Connected)
+                        try
                         {
-                            client.Close();
-                            continue;
+                            var result = client.BeginConnect(dnsServer.Address, dnsServer.Port, null, null);
+                            var success = result.AsyncWaitHandle.WaitOne(Timeout * 1000, true);
+
+                            if (!success || !client.Connected)
+                            {
+                                //client.Close();
+                                continue;
+                            }
+
+                            using (var stream = new BufferedStream(client.GetStream()))
+                            {
+                                var data = request.Data;
+                                stream.WriteByte((byte)((data.Length >> 8) & 0xff));
+                                stream.WriteByte((byte)(data.Length & 0xff));
+                                stream.Write(data, 0, data.Length);
+                                stream.Flush();
+
+                                var transferResponse = new Response();
+                                var soa = 0;
+                                var messageSize = 0;
+
+                                while (true)
+                                {
+                                    var length = stream.ReadByte() << 8 | stream.ReadByte();
+
+                                    if (length <= 0)
+                                    {
+                                        //client.Close();
+                                        throw new SocketException();
+                                    }
+
+                                    messageSize += length;
+
+                                    var incomingData = new byte[length];
+                                    stream.Read(incomingData, 0, length);
+                                    var response = new Response(dnsServer, incomingData);
+
+                                    if (response.Header.RCode != ResponseCode.NoError)
+                                    {
+                                        return response;
+                                    }
+
+                                    if (response.Questions[0].QType != QueryType.AXFR)
+                                    {
+                                        AddToCache(response);
+                                        return response;
+                                    }
+
+                                    if (transferResponse.Questions.Count == 0)
+                                    {
+                                        transferResponse.Questions.AddRange(response.Questions);
+                                    }
+                                    transferResponse.Answers.AddRange(response.Answers);
+                                    transferResponse.Authorities.AddRange(response.Authorities);
+                                    transferResponse.Additionals.AddRange(response.Additionals);
+
+                                    if (response.Answers[0].Type == DnsType.SOA)
+                                    {
+                                        soa++;
+                                    }
+
+                                    if (soa != 2) continue;
+                                    transferResponse.Header.QuestionCount = (ushort)transferResponse.Questions.Count;
+                                    transferResponse.Header.AnswerCount = (ushort)transferResponse.Answers.Count;
+                                    transferResponse.Header.AuthorityCount = (ushort)transferResponse.Authorities.Count;
+                                    transferResponse.Header.AdditionalsCount = (ushort)transferResponse.Additionals.Count;
+                                    transferResponse.MessageSize = messageSize;
+                                    return transferResponse;
+                                }
+                            }
                         }
-
-                        var stream = new BufferedStream(client.GetStream());
-
-                        var data = request.Data;
-                        stream.WriteByte((byte) ((data.Length >> 8) & 0xff));
-                        stream.WriteByte((byte) (data.Length & 0xff));
-                        stream.Write(data, 0, data.Length);
-                        stream.Flush();
-
-                        var transferResponse = new Response();
-                        var soa = 0;
-                        var messageSize = 0;
-
-                        while (true)
+                        finally
                         {
-                            var length = stream.ReadByte() << 8 | stream.ReadByte();
-
-                            if (length <= 0)
-                            {
-                                client.Close();
-                                throw new SocketException();
-                            }
-
-                            messageSize += length;
-
-                            var incomingData = new byte[length];
-                            stream.Read(incomingData, 0, length);
-                            var response = new Response(dnsServer, incomingData);
-
-                            if (response.Header.RCode != ResponseCode.NoError)
-                            {
-                                return response;
-                            }
-
-                            if (response.Questions[0].QType != QueryType.AXFR)
-                            {
-                                AddToCache(response);
-                                return response;
-                            }
-
-                            if (transferResponse.Questions.Count == 0)
-                            {
-                                transferResponse.Questions.AddRange(response.Questions);
-                            }
-                            transferResponse.Answers.AddRange(response.Answers);
-                            transferResponse.Authorities.AddRange(response.Authorities);
-                            transferResponse.Additionals.AddRange(response.Additionals);
-
-                            if (response.Answers[0].Type == DnsType.SOA)
-                            {
-                                soa++;
-                            }
-
-                            if (soa != 2) continue;
-                            transferResponse.Header.qdCount = (ushort) transferResponse.Questions.Count;
-                            transferResponse.Header.anCount = (ushort) transferResponse.Answers.Count;
-                            transferResponse.Header.nsCount = (ushort) transferResponse.Authorities.Count;
-                            transferResponse.Header.arCount = (ushort) transferResponse.Additionals.Count;
-                            transferResponse.MessageSize = messageSize;
-                            return transferResponse;
+                            _unique++;
                         }
-                    }
-                    catch (SocketException)
-                    {
-                    }
-                    finally
-                    {
-                        _unique++;
-                        client.Close();
                     }
                 }
             }

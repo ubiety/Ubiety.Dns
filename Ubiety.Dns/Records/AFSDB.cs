@@ -17,8 +17,8 @@ namespace Ubiety.Dns.Records
 {
     public class AFSDB : BaseRecord
     {
-        public ushort SubType;
-        public string Hostname;
+        public readonly ushort SubType;
+        public readonly string Hostname;
 
         public AFSDB(RecordReader reader)
         {

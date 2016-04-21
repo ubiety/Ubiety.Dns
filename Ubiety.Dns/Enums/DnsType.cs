@@ -37,7 +37,7 @@ namespace Ubiety.Dns.Enums
         RP = 17, // The Responsible Person rfc1183
         AFSDB = 18, // AFS Data Base location
         X25 = 19, // X.25 address rfc1183
-        ISDN = 20, // ISDN address rfc1183 
+        ISDN = 20, // ISDN address rfc1183
         RT = 21, // The Route Through rfc1183
 
         NSAP = 22, // Network service access point address rfc1706

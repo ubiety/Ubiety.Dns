@@ -17,10 +17,10 @@ namespace Ubiety.Dns.Records
 {
     public class SRV : BaseRecord
     {
-        public ushort Priority;
-        public ushort Weight;
-        public ushort Port;
-        public string Target;
+        public readonly ushort Priority;
+        public readonly ushort Weight;
+        public readonly ushort Port;
+        public readonly string Target;
 
         public SRV(RecordReader reader)
         {
