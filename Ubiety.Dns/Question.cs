@@ -21,7 +21,7 @@ namespace Ubiety.Dns
 {
     public class Question
     {
-        string _qName;
+        private string _qName;
 
         public Question(string qName, QueryType qType, QueryClass qClass)
         {
@@ -33,16 +33,13 @@ namespace Ubiety.Dns
         public Question(RecordReader reader)
         {
             QName = reader.ReadDomainName();
-            QType = (QueryType)reader.ReadUInt16();
-            QClass = (QueryClass)reader.ReadUInt16();
+            QType = (QueryType) reader.ReadUInt16();
+            QClass = (QueryClass) reader.ReadUInt16();
         }
 
         public string QName
         {
-            get
-            {
-                return _qName;
-            }
+            get { return _qName; }
 
             set
             {
@@ -52,17 +49,9 @@ namespace Ubiety.Dns
             }
         }
 
-        public QueryType QType
-        {
-            get;
-            set;
-        }
+        public QueryType QType { get; set; }
 
-        public QueryClass QClass
-        {
-            get;
-            set;
-        }
+        public QueryClass QClass { get; set; }
 
         public byte[] Data
         {
@@ -70,8 +59,8 @@ namespace Ubiety.Dns
             {
                 var list = new List<byte>();
                 list.AddRange(QName.WriteName());
-                list.AddRange(((ushort)QType).Write());
-                list.AddRange(((ushort)QClass).Write());
+                list.AddRange(((ushort) QType).Write());
+                list.AddRange(((ushort) QClass).Write());
 
                 return list.ToArray();
             }
@@ -79,8 +68,7 @@ namespace Ubiety.Dns
 
         public override string ToString()
         {
-            return string.Format("{0,-32}\t{1}\t{2}", QName, QClass, QType);
+            return $"{QName,-32}\t{QClass}\t{QType}";
         }
     }
 }
-

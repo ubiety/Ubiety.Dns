@@ -15,33 +15,26 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using Ubiety.Dns.Records;
 
 namespace Ubiety.Dns
 {
-	public class Response
-	{
-        public List<Question> Questions;
-
-        public List<AnswerResourceRecord> Answers;
-
-        public List<AuthorityResourceRecord> Authorities;
-
+    public class Response
+    {
         public List<AdditionalResourceRecord> Additionals;
-
-        public Header Header;
-
+        public List<AnswerResourceRecord> Answers;
+        public List<AuthorityResourceRecord> Authorities;
         public string Error;
-
+        public Header Header;
         public int MessageSize;
-
+        public List<Question> Questions;
+        public IPEndPoint Server;
         public DateTime Timestamp;
 
-        public IPEndPoint Server;
-
-		public Response ()
-		{
+        public Response()
+        {
             Questions = new List<Question>();
             Answers = new List<AnswerResourceRecord>();
             Authorities = new List<AuthorityResourceRecord>();
@@ -52,7 +45,7 @@ namespace Ubiety.Dns
             MessageSize = 0;
             Timestamp = DateTime.Now;
             Header = new Header();
-		}
+        }
 
         public Response(IPEndPoint endPoint, byte[] data)
         {
@@ -69,51 +62,37 @@ namespace Ubiety.Dns
 
             Header = new Header(reader);
 
-            for (int i = 0; i < Header.qdCount; i++)
+            for (var i = 0; i < Header.qdCount; i++)
             {
                 Questions.Add(new Question(reader));
             }
 
-            for (int i = 0; i < Header.anCount; i++)
+            for (var i = 0; i < Header.anCount; i++)
             {
                 Answers.Add(new AnswerResourceRecord(reader));
             }
 
-            for (int i = 0; i < Header.nsCount; i++)
+            for (var i = 0; i < Header.nsCount; i++)
             {
                 Authorities.Add(new AuthorityResourceRecord(reader));
             }
 
-            for (int i = 0; i < Header.arCount; i++)
+            for (var i = 0; i < Header.arCount; i++)
             {
                 Additionals.Add(new AdditionalResourceRecord(reader));
             }
         }
 
-        public ResourceRecord[] RecordsRR
+        public ResourceRecord[] AllResourceRecords
         {
             get
             {
-                var list = new List<ResourceRecord>();
-                foreach (var record in Answers)
-                {
-                    list.Add(record);
-                }
+                var list = Answers.Cast<ResourceRecord>().ToList();
+                list.AddRange(Answers);
 
-                foreach (var record in Answers)
-                {
-                    list.Add(record);
-                }
+                list.AddRange(Authorities);
 
-                foreach (var record in Authorities)
-                {
-                    list.Add(record);
-                }
-
-                foreach (var record in Additionals)
-                {
-                    list.Add(record);
-                }
+                list.AddRange(Additionals);
 
                 return list.ToArray();
             }
@@ -121,57 +100,17 @@ namespace Ubiety.Dns
 
         public A[] ARecords
         {
-            get
-            {
-                var list = new List<A>();
-                foreach (var answer in Answers)
-                {
-                    var record = answer.Record as A;
-                    if (record != null)
-                    {
-                        list.Add(record);
-                    }
-                }
-
-                return list.ToArray();
-            }
+            get { return Answers.Select(answer => answer.Record).OfType<A>().ToArray(); }
         }
 
         public AAAA[] AAAARecords
         {
-            get
-            {
-                var list = new List<AAAA>();
-                foreach (var answer in Answers)
-                {
-                    var record = answer.Record as AAAA;
-                    if (record != null)
-                    {
-                        list.Add(record);
-                    }
-                }
-
-                return list.ToArray();
-            }
+            get { return Answers.Select(answer => answer.Record).OfType<AAAA>().ToArray(); }
         }
 
         public SRV[] SRVRecords
         {
-            get
-            {
-                var list = new List<SRV>();
-                foreach (var answer in Answers)
-                {
-                    var record = answer.Record as SRV;
-                    if (record != null)
-                    {
-                        list.Add(record);
-                    }
-                }
-
-                return list.ToArray();
-            }
+            get { return Answers.Select(answer => answer.Record).OfType<SRV>().ToArray(); }
         }
-	}
+    }
 }
-

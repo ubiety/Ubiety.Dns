@@ -32,7 +32,7 @@ namespace Ubiety.Dns.Records
 
         public override string ToString()
         {
-            return string.Format("{0} {1} {2} {3}", Priority, Weight, Port, Target);
+            return $"{Priority} {Weight} {Port} {Target}";
         }
     }
 }

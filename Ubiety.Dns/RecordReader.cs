@@ -13,17 +13,16 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 
-using System;
-using System.Text;
 using System.Collections.Generic;
-using Ubiety.Dns.Records;
+using System.Text;
 using Ubiety.Dns.Enums;
+using Ubiety.Dns.Records;
 
 namespace Ubiety.Dns
 {
     public class RecordReader
     {
-        byte[] _data;
+        private readonly byte[] _data;
 
         public RecordReader(byte[] data)
         {
@@ -37,11 +36,7 @@ namespace Ubiety.Dns
             Position = position;
         }
 
-        public int Position
-        {
-            get;
-            set;
-        }
+        public int Position { get; set; }
 
         public byte ReadByte()
         {
@@ -50,23 +45,23 @@ namespace Ubiety.Dns
 
         public char ReadChar()
         {
-            return (char)ReadByte();
+            return (char) ReadByte();
         }
 
-        public UInt16 ReadUInt16()
+        public ushort ReadUInt16()
         {
-            return (UInt16)(ReadByte() << 8 | ReadByte());
+            return (ushort) (ReadByte() << 8 | ReadByte());
         }
 
-        public UInt16 ReadUInt16(int offset)
+        public ushort ReadUInt16(int offset)
         {
             Position += offset;
             return ReadUInt16();
         }
 
-        public UInt32 ReadUInt32()
+        public uint ReadUInt32()
         {
-            return (UInt32)(ReadUInt16() << 16 | ReadUInt16());
+            return (uint) (ReadUInt16() << 16 | ReadUInt16());
         }
 
         public string ReadDomainName()
@@ -100,7 +95,7 @@ namespace Ubiety.Dns
             short length = ReadByte();
             var name = new StringBuilder();
 
-            for (int i = 0; i < length; i++)
+            for (var i = 0; i < length; i++)
             {
                 name.Append(ReadChar());
             }
@@ -111,7 +106,7 @@ namespace Ubiety.Dns
         public byte[] ReadBytes(int length)
         {
             var list = new List<byte>();
-            for (int i = 0; i < length; i++)
+            for (var i = 0; i < length; i++)
             {
                 list.Add(ReadByte());
             }
@@ -135,4 +130,3 @@ namespace Ubiety.Dns
         }
     }
 }
-

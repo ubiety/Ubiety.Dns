@@ -23,7 +23,7 @@ namespace Ubiety.Dns.Records
 
         public A(RecordReader reader)
         {
-            IPAddress.TryParse(string.Format("{0}.{1}.{2}.{3}", reader.ReadByte(), reader.ReadByte(), reader.ReadByte(), reader.ReadByte()), out Address);
+            IPAddress.TryParse($"{reader.ReadByte()}.{reader.ReadByte()}.{reader.ReadByte()}.{reader.ReadByte()}", out Address);
         }
 
         public override string ToString()

@@ -35,4 +35,3 @@ namespace Ubiety.Dns.Enums
         Reserved15 = 15
     }
 }
-

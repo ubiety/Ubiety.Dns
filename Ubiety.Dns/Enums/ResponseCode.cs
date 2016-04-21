@@ -42,4 +42,3 @@ namespace Ubiety.Dns.Enums
         BadTrunc = 22
     }
 }
-

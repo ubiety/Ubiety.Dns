@@ -21,21 +21,20 @@ namespace Ubiety.Dns
 {
     public class ResourceRecord
     {
-        public string Name;
-        public DnsType Type;
+        private uint _ttl;
         public DnsClass Class;
-        public int TimeLived;
+        public string Name;
         public ushort RDLength;
         public BaseRecord Record;
-
-        uint _ttl;
+        public int TimeLived;
+        public DnsType Type;
 
         public ResourceRecord(RecordReader reader)
         {
             TimeLived = 0;
             Name = reader.ReadDomainName();
-            Type = (DnsType)reader.ReadUInt16();
-            Class = (DnsClass)reader.ReadUInt16();
+            Type = (DnsType) reader.ReadUInt16();
+            Class = (DnsClass) reader.ReadUInt16();
             TTL = reader.ReadUInt32();
             RDLength = reader.ReadUInt16();
             Record = reader.ReadRecord(Type);
@@ -44,20 +43,14 @@ namespace Ubiety.Dns
 
         public uint TTL
         {
-            get
-            {
-                return (uint)Math.Max(0, _ttl - TimeLived);
-            }
+            get { return (uint) Math.Max(0, _ttl - TimeLived); }
 
-            set
-            {
-                _ttl = value;
-            }
+            set { _ttl = value; }
         }
 
         public override string ToString()
         {
-            return string.Format("{0,-32} {1}\t{2}\t{3}\t{4}", Name, TTL, Class, Type, Record);
+            return $"{Name,-32} {TTL}\t{Class}\t{Type}\t{Record}";
         }
     }
 
@@ -82,4 +75,3 @@ namespace Ubiety.Dns
         }
     }
 }
-

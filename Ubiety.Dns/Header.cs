@@ -21,17 +21,13 @@ namespace Ubiety.Dns
 {
     public class Header
     {
-        public ushort Id;
-
-        public ushort qdCount;
+        private readonly ushort _flags;
 
         public ushort anCount;
-
-        public ushort nsCount;
-
         public ushort arCount;
-
-        readonly ushort _flags;
+        public ushort Id;
+        public ushort nsCount;
+        public ushort qdCount;
 
         public Header()
         {
@@ -47,7 +43,7 @@ namespace Ubiety.Dns
             arCount = reader.ReadUInt16();
         }
 
-        public byte[] Data 
+        public byte[] Data
         {
             get
             {
@@ -65,107 +61,58 @@ namespace Ubiety.Dns
 
         public bool QR
         {
-            get
-            {
-                return _flags.GetBits(15, 1) == 1;
-            }
+            get { return _flags.GetBits(15, 1) == 1; }
 
-            set
-            {
-                _flags.SetBits(15, 1, value);
-            }
+            set { _flags.SetBits(15, 1, value); }
         }
 
         public bool AA
         {
-            get
-            {
-                return _flags.GetBits(10, 1) == 1;
-            }
+            get { return _flags.GetBits(10, 1) == 1; }
 
-            set
-            {
-                _flags.SetBits(10, 1, value);
-            }
+            set { _flags.SetBits(10, 1, value); }
         }
 
         public bool TC
         {
-            get
-            {
-                return _flags.GetBits(9, 1) == 1;
-            }
+            get { return _flags.GetBits(9, 1) == 1; }
 
-            set
-            {
-                _flags.SetBits(9, 1, value);
-            }
+            set { _flags.SetBits(9, 1, value); }
         }
 
         public bool RD
         {
-            get
-            {
-                return _flags.GetBits(8, 1) == 1;
-            }
+            get { return _flags.GetBits(8, 1) == 1; }
 
-            set
-            {
-                _flags.SetBits(8, 1, value);
-            }
+            set { _flags.SetBits(8, 1, value); }
         }
 
         public bool RA
         {
-            get
-            {
-                return _flags.GetBits(7, 1) == 1;
-            }
+            get { return _flags.GetBits(7, 1) == 1; }
 
-            set
-            {
-                _flags.SetBits(7, 1, value);
-            }
+            set { _flags.SetBits(7, 1, value); }
         }
 
         public ushort Z
         {
-            get
-            {
-                return _flags.GetBits(4, 3);
-            }
+            get { return _flags.GetBits(4, 3); }
 
-            set
-            {
-                _flags.SetBits(4, 3, value);
-            }
+            set { _flags.SetBits(4, 3, value); }
         }
 
         public OPCode OPCode
         {
-            get
-            {
-                return (OPCode)_flags.GetBits(11, 4);
-            }
+            get { return (OPCode) _flags.GetBits(11, 4); }
 
-            set
-            {
-                _flags.SetBits(11, 4, (ushort)value);
-            }
+            set { _flags.SetBits(11, 4, (ushort) value); }
         }
 
         public ResponseCode RCode
         {
-            get
-            {
-                return (ResponseCode)_flags.GetBits(0, 4);
-            }
+            get { return (ResponseCode) _flags.GetBits(0, 4); }
 
-            set
-            {
-                _flags.SetBits(0, 4, (ushort)value);
-            }
+            set { _flags.SetBits(0, 4, (ushort) value); }
         }
     }
 }
-

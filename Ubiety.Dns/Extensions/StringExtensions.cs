@@ -36,17 +36,14 @@ namespace Ubiety.Dns.Extensions
             for (int i = 0, j = 0; i < source.Length; i++, j++)
             {
                 name.Append(source[i]);
-                if (source[i] == '.')
-                {
-                    name[i - j] = (char)(j & 0xff);
-                    j = -1;
-                }
+                if (source[i] != '.') continue;
+                name[i - j] = (char) (j & 0xff);
+                j = -1;
             }
 
             name[name.Length - 1] = '\0';
 
             return Encoding.ASCII.GetBytes(name.ToString());
-         }
+        }
     }
 }
-

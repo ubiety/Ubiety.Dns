@@ -33,10 +33,12 @@ namespace DnsTest
                 Console.WriteLine(response.Error);
             }
 
-            foreach (var record in response.RecordsRR)
+            foreach (var record in response.AllResourceRecords)
             {
                 Console.WriteLine(record);
             }
+
+		    Console.ReadLine();
 		}
 	}
 }
