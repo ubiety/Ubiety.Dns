@@ -1,5 +1,5 @@
 ﻿//
-//  Copyright 2016  Dieter Lunn
+//  Copyright 2016, 2017  Dieter Lunn
 //
 //    Licensed under the Apache License, Version 2.0 (the "License");
 //    you may not use this file except in compliance with the License.
@@ -13,22 +13,25 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 
+using System.IO;
+using System.Net;
+
 namespace Ubiety.Dns.Records
 {
-    public class AFSDB : BaseRecord
+    public sealed class ARecord : DnsRecordBase
     {
-        public AFSDB(RecordReader reader)
+        private string _address;
+
+        public ARecord(RecordHeader header) : base(header)
         {
-            SubType = reader.ReadUInt16();
-            Hostname = reader.ReadDomainName();
         }
 
-        public ushort SubType { get; }
-        public string Hostname { get; }
+        public IPAddress Address => IPAddress.Parse(_address);
 
-        public override string ToString()
+        public override void ParseRecord(ref MemoryStream stream)
         {
-            return $"{SubType} {Hostname}";
+            _address = stream.ReadByte() + "." + stream.ReadByte() + "." + stream.ReadByte() + "." + stream.ReadByte();
+            Answer = "Address: " + _address;
         }
     }
 }

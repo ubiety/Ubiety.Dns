@@ -1,5 +1,5 @@
 ﻿//
-//  Copyright 2016  Dieter Lunn
+//  Copyright 2017 Dieter Lunn
 //
 //    Licensed under the Apache License, Version 2.0 (the "License");
 //    you may not use this file except in compliance with the License.
@@ -13,26 +13,18 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 
+using System.IO;
+
 namespace Ubiety.Dns.Records
 {
-    public class SRV : BaseRecord
+    public interface IDnsRecord
     {
-        public SRV(RecordReader reader)
-        {
-            Priority = reader.ReadUInt16();
-            Weight = reader.ReadUInt16();
-            Port = reader.ReadUInt16();
-            Target = reader.ReadDomainName();
-        }
+        RecordHeader RecordHeader { get; }
+        string Answer { get; }
+        string ErrorMessage { get; }
+        void ParseRecord(ref MemoryStream stream);
+        string ToString();
 
-        public ushort Priority { get; }
-        public ushort Weight { get; }
-        public ushort Port { get; }
-        public string Target { get; }
-
-        public override string ToString()
-        {
-            return $"{Priority} {Weight} {Port} {Target}";
-        }
+        byte[] GetMessageBytes();
     }
 }

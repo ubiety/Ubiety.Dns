@@ -34,29 +34,29 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DnsHelpers.cs" />
     <Compile Include="Enums\DnsFlags.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Query\DnsQueryBase.cs" />
-    <Compile Include="Resolver.cs" />
-    <Compile Include="Response.cs" />
-    <Compile Include="Question.cs" />
-    <Compile Include="Header.cs" />
-    <Compile Include="RecordReader.cs" />
+    <Compile Include="Query\DnsQueryRequest.cs" />
+    <Compile Include="Query\DnsQueryResponse.cs" />
+    <Compile Include="Records\DnsRecordBase.cs" />
+    <Compile Include="Records\IDnsRecord.cs" />
+    <Compile Include="Records\RecordFactory.cs" />
+    <Compile Include="Records\RecordHeader.cs" />
     <Compile Include="Extensions\UshortExtensions.cs" />
     <Compile Include="Enums\OpCode.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
-    <Compile Include="Records\A.cs" />
-    <Compile Include="Records\AAAA.cs" />
-    <Compile Include="Records\AFSDB.cs" />
-    <Compile Include="Records\SRV.cs" />
-    <Compile Include="Request.cs" />
+    <Compile Include="Records\ARecord.cs" />
+    <Compile Include="Records\AAAARecord.cs" />
+    <Compile Include="Records\SRVRecord.cs" />
     <Compile Include="Enums\DnsClass.cs" />
     <Compile Include="Enums\DnsType.cs" />
     <Compile Include="Enums\QueryClass.cs" />
     <Compile Include="Enums\QueryType.cs" />
     <Compile Include="Enums\ResponseCode.cs" />
-    <Compile Include="Records\BaseRecord.cs" />
-    <Compile Include="ResourceRecord.cs" />
+    <Compile Include="Records\UnknownRecord.cs" />
+    <Compile Include="Tools.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

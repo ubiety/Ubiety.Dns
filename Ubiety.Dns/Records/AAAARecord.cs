@@ -1,5 +1,5 @@
 ﻿//
-//  Copyright 2016  Dieter Lunn
+//  Copyright 2016, 2017 Dieter Lunn
 //
 //    Licensed under the Apache License, Version 2.0 (the "License");
 //    you may not use this file except in compliance with the License.
@@ -17,15 +17,13 @@ using System.Net;
 
 namespace Ubiety.Dns.Records
 {
-    public class AAAA : BaseRecord
+    public class AAAARecord : DnsRecordBase
     {
         private readonly IPAddress _address;
 
-        public AAAA(RecordReader reader)
+        public AAAARecord(RecordHeader header) : base(header)
         {
-            IPAddress.TryParse(
-                $"{reader.ReadUInt16():X}:{reader.ReadUInt16():X}:{reader.ReadUInt16():X}:{reader.ReadUInt16():X}:{reader.ReadUInt16():X}:{reader.ReadUInt16():X}:{reader.ReadUInt16():X}:{reader.ReadUInt16():X}",
-                out _address);
+
         }
 
         public IPAddress Address => _address;

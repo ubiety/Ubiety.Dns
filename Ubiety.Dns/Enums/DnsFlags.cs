@@ -17,5 +17,14 @@ namespace Ubiety.Dns.Enums
         RCodeMask = 0x000F
     }
 
-
+    [Flags]
+    public enum NsFlags : ushort
+    {
+        AA = 0x0400,
+        TC = 0x0200,
+        RD = 0x0100,
+        RA = 0x0080,
+        AD = 0x0020,
+        CD = 0x0010
+    }
 }
