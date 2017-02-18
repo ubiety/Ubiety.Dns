@@ -32,7 +32,7 @@ namespace Ubiety.Dns
         {
             Header = new Header
             {
-                OPCode = OPCode.Query,
+                OPCode = OpCode.Query,
                 QuestionCount = 0
             };
 

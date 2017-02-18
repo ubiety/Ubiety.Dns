@@ -13,9 +13,12 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 
+using System;
+
 namespace Ubiety.Dns.Enums
 {
-    public enum ResponseCode
+    [Flags]
+    public enum ResponseCode : ushort
     {
         NoError = 0,
         FormError = 1,

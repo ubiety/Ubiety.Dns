@@ -101,9 +101,9 @@ namespace Ubiety.Dns
             set { _flags.SetBits(4, 3, value); }
         }
 
-        public OPCode OPCode
+        public OpCode OPCode
         {
-            get { return (OPCode) _flags.GetBits(11, 4); }
+            get { return (OpCode) _flags.GetBits(11, 4); }
 
             set { _flags.SetBits(11, 4, (ushort) value); }
         }
