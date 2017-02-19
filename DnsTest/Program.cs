@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Net.NetworkInformation;
-using Ubiety.Dns;
+using System.Net.Sockets;
 using Ubiety.Dns.Enums;
+using Ubiety.Dns.Query;
 
 namespace DnsTest
 {
@@ -17,24 +18,23 @@ namespace DnsTest
 
             Console.WriteLine();
 
-            Console.WriteLine("Dns Servers: ");
-            foreach (var dns in Resolver.GetDnsServers())
+            var request = new DnsQueryRequest();
+            var response = request.Resolve(args[0], QueryType.A, QueryClass.IN, ProtocolType.Tcp);
+
+            Console.WriteLine($"A Record for {args[0]}:");
+
+            foreach (var record in response.Answers)
             {
-                Console.WriteLine(dns);
+                Console.WriteLine(record);
             }
 
             Console.WriteLine();
 
-            var resolver = new Resolver();
-            var response = resolver.Query(args[0], QueryType.A);
+            Console.WriteLine($"SRV Records for {args[0]}:");
 
-            Console.WriteLine("A Record for " + args[0] + ":");
-            if (!string.IsNullOrEmpty(response.Error))
-            {
-                Console.WriteLine(response.Error);
-            }
+            var srv = request.Resolve($"_xmpp-client._tcp.{args[0]}", QueryType.SRV, QueryClass.IN, ProtocolType.Tcp);
 
-            foreach (var record in response.AllResourceRecords)
+            foreach (var record in srv.Answers)
             {
                 Console.WriteLine(record);
             }

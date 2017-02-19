@@ -40,7 +40,7 @@ namespace Ubiety.Dns.Query
 
         internal void ParseResponse(byte[] receiveBytes, ProtocolType protocolType)
         {
-            var stream = new MemoryStream();
+            var stream = new MemoryStream(receiveBytes);
             var flagBytes = new byte[2];
             var transactionId = new byte[2];
             var questions = new byte[2];
