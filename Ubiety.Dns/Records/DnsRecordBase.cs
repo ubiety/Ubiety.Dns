@@ -34,7 +34,7 @@ namespace Ubiety.Dns.Records
 
         public virtual void ParseRecord(ref MemoryStream stream)
         {
-            Answer = DnsRecordBase.ParseName(ref stream);
+            Answer = ParseName(ref stream);
         }
 
         internal static string ParseName(ref MemoryStream stream)
@@ -57,7 +57,7 @@ namespace Ubiety.Dns.Records
                         var oldPtr = stream.Position;
 
                         stream.Position = bPointer;
-                        name.Append(DnsRecordBase.ParseName(ref stream));
+                        name.Append(ParseName(ref stream));
                         stream.Position = oldPtr;
                         next = 0x00;
 

@@ -19,7 +19,7 @@ namespace Ubiety.Dns
 {
     public class DnsHelpers
     {
-        internal static byte[] CanonicaliseDnsName(string name, bool lowerCase)
+        public static byte[] CanonicaliseDnsName(string name, bool lowerCase)
         {
             if (!name.EndsWith("."))
             {

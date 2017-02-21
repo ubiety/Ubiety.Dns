@@ -4,8 +4,11 @@
     <content url="file://$MODULE_DIR$/../..">
       <sourceFolder url="file://$MODULE_DIR$/../../DnsTest" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../Ubiety.Dns" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../Ubiety.Dns.Tests" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../DnsTest/bin" />
       <excludeFolder url="file://$MODULE_DIR$/../../DnsTest/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../Ubiety.Dns.Tests/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../Ubiety.Dns.Tests/obj" />
       <excludeFolder url="file://$MODULE_DIR$/../../Ubiety.Dns/bin" />
       <excludeFolder url="file://$MODULE_DIR$/../../Ubiety.Dns/obj" />
       <excludeFolder url="file://$MODULE_DIR$/../../packages" />

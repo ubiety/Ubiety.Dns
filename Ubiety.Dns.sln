@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ubiety.Dns", "Ubiety.Dns\Ub
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DnsTest", "DnsTest\DnsTest.csproj", "{BAEE8993-6E90-4DB3-A7FC-527271EFB67E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ubiety.Dns.Tests", "Ubiety.Dns.Tests\Ubiety.Dns.Tests.csproj", "{1C1E0D5E-A8AD-437B-BEAF-1B7103073A3C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{BAEE8993-6E90-4DB3-A7FC-527271EFB67E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAEE8993-6E90-4DB3-A7FC-527271EFB67E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BAEE8993-6E90-4DB3-A7FC-527271EFB67E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C1E0D5E-A8AD-437B-BEAF-1B7103073A3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C1E0D5E-A8AD-437B-BEAF-1B7103073A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C1E0D5E-A8AD-437B-BEAF-1B7103073A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C1E0D5E-A8AD-437B-BEAF-1B7103073A3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0

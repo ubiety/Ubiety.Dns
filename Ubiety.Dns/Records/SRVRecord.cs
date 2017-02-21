@@ -44,7 +44,7 @@ namespace Ubiety.Dns.Records
             stream.Read(port, 0, 2);
             Port = (ushort) IPAddress.NetworkToHostOrder((short) BitConverter.ToUInt16(port, 0));
 
-            Target = DnsRecordBase.ParseName(ref stream);
+            Target = ParseName(ref stream);
 
             Answer = $"Service Location: \r\nPriority: {Priority}\r\nWeight: {Weight}\r\nPort: {Port}\r\nTarget: {Target}";
         }
