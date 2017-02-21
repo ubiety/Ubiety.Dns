@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Ubiety.Dns</id>
+    <version>1.0.0</version>
+    <title>Ubiety.Dns</title>
+    <authors>Dieter Lunn</authors>
+    <owners>Dieter Lunn</owners>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <projectUrl>https://github.com/ubiety/Ubiety.Dns</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>DNS library</description>
+    <copyright>Copyright 2017 Dieter Lunn</copyright>
+    <tags>dns ubiety</tags>
+  </metadata>
+  <files>
+    <file src="bin/$configuration$/Ubiety.Dns.dll" target="lib\net45" />
+  </files>
+</package>

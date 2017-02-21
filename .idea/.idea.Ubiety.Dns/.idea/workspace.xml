@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5895699a-0432-4dad-a4b0-b6369de32fe8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ubiety.Dns/Properties/AssemblyInfo.cs" afterPath="$PROJECT_DIR$/Ubiety.Dns/Properties/AssemblyInfo.cs" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Ubiety.Dns/Enums/OPCode.cs" />
+        <option value="$PROJECT_DIR$/Ubiety.Dns/Enums/OpCode.cs" />
+        <option value="$PROJECT_DIR$/Ubiety.Dns/Enums/ResponseCode.cs" />
+        <option value="$PROJECT_DIR$/Ubiety.Dns/Enums/DnsFlags.cs" />
+        <option value="$PROJECT_DIR$/Ubiety.Dns/Records/A.cs" />
+        <option value="$PROJECT_DIR$/Ubiety.Dns/Records/ARecord.cs" />
+        <option value="$PROJECT_DIR$/Ubiety.Dns/DnsHelpers.cs" />
+        <option value="$PROJECT_DIR$/Ubiety.Dns/Records/DnsRecordBase.cs" />
+        <option value="$PROJECT_DIR$/Ubiety.Dns/Query/DnsQueryBase.cs" />
+        <option value="$PROJECT_DIR$/Ubiety.Dns/Records/RecordHeader.cs" />
+        <option value="$PROJECT_DIR$/Ubiety.Dns/Records/SRVRecord.cs" />
+        <option value="$PROJECT_DIR$/Ubiety.Dns/Records/UnknownRecord.cs" />
+        <option value="$PROJECT_DIR$/Ubiety.Dns/Records/AAAARecord.cs" />
+        <option value="$PROJECT_DIR$/Ubiety.Dns/Records/RecordFactory.cs" />
+        <option value="$PROJECT_DIR$/Ubiety.Dns/Tools.cs" />
+        <option value="$PROJECT_DIR$/Ubiety.Dns/Query/DnsQueryResponse.cs" />
+        <option value="$PROJECT_DIR$/DnsTest/Program.cs" />
+        <option value="$PROJECT_DIR$/Ubiety.Dns/Query/DnsQueryRequest.cs" />
+        <option value="$PROJECT_DIR$/Ubiety.Dns/Records/IDnsRecord.cs" />
+        <option value="$PROJECT_DIR$/Ubiety.Dns/Properties/AssemblyInfo.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1680" />
+    <option name="y" value="34" />
+    <option name="width" value="1920" />
+    <option name="height" value="1046" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="SolutionExplorer">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ubiety.Dns (2 projects)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ubiety.Dns" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ubiety.Dns (2 projects)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ubiety.Dns" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Properties" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ubiety.Dns (2 projects)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DnsTest" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <option name="show-file-system" value="false" />
+        <option name="show-all-items" value="false" />
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager" selected=".NET Project.Default">
+    <configuration default="true" type="DotNetProject" factoryName=".NET Project">
+      <option name="PROJECT_PATH" value="" />
+      <option name="PROJECT_KIND" value="None" />
+      <option name="PROJECT_TFM" value="" />
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="USE_MONO" value="0" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Default" type="DotNetProject" factoryName=".NET Project">
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/DnsTest/DnsTest.csproj" />
+      <option name="PROJECT_KIND" value="Console" />
+      <option name="PROJECT_TFM" value=".NETFramework,Version=v4.5" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/DnsTest/bin/Debug/DnsTest.exe" />
+      <option name="PROGRAM_PARAMETERS" value="dieterlunn.ca" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DnsTest/bin/Debug" />
+      <option name="USE_MONO" value="0" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <envs />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue=".NET Project.Default" />
+    </list>
+  </component>
+  <component name="RuntimeDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5895699a-0432-4dad-a4b0-b6369de32fe8" name="Default" comment="" />
+      <created>1484255926846</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1484255926846</updated>
+      <workItem from="1484255934558" duration="1041000" />
+      <workItem from="1487375427850" duration="13788000" />
+      <workItem from="1487542862965" duration="3976000" />
+      <workItem from="1487615640700" duration="1919000" />
+    </task>
+    <task id="LOCAL-00001" summary="Changing DNS lookup method">
+      <created>1487382861351</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1487382861351</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Update to new lookup classes">
+      <created>1487394834436</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1487394834436</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Fixed bug by not passing bytes into stream">
+      <created>1487545335716</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1487545335716</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="20724000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1680" y="34" width="1920" height="1046" extended-state="6" />
+    <layout>
+      <window_info id="Change Signature" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17590618" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3995657" sideWeight="0.5053305" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Errors in solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="UnitTesting" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3995657" sideWeight="0.4946695" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Errors in solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5021322" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.4978678" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="UnitTesting" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
+      <window_info id="Change Signature" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17270789" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3995657" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Changing DNS lookup method" />
+    <MESSAGE value="Update to new lookup classes" />
+    <MESSAGE value="Fixed bug by not passing bytes into stream" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug by not passing bytes into stream" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Ubiety.Dns/Records/RecordFactory.cs</url>
+          <line>38</line>
+          <properties startOffset="1308" endOffset="1348" documentPath="$PROJECT_DIR$/Ubiety.Dns/Records/RecordFactory.cs" />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="9" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Ubiety.Dns/Query/DnsQueryRequest.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding>
+            <marker date="1487613941342" expanded="true" signature="0:618" ph="/* Copyright 2017 Dieter Lunn ... */" />
+            <marker date="1487613941342" expanded="true" signature="626:753" ph="..." />
+            <marker date="1487613941342" expanded="true" signature="781:6881" ph="{...}" />
+            <marker date="1487613941342" expanded="true" signature="831:6879" ph="{...}" />
+            <marker date="1487613941342" expanded="true" signature="1032:1346" ph="{...}" />
+            <marker date="1487613941342" expanded="true" signature="1483:1711" ph="{...}" />
+            <marker date="1487613941342" expanded="true" signature="1866:2785" ph="{...}" />
+            <marker date="1487613941342" expanded="true" signature="2251:2629" ph="{...}" />
+            <marker date="1487613941342" expanded="true" signature="2865:3340" ph="{...}" />
+            <marker date="1487613941342" expanded="true" signature="2967:3216" ph="{...}" />
+            <marker date="1487613941342" expanded="true" signature="3236:3296" ph="{...}" />
+            <marker date="1487613941342" expanded="true" signature="3420:4352" ph="{...}" />
+            <marker date="1487613941342" expanded="true" signature="3530:4227" ph="{...}" />
+            <marker date="1487613941342" expanded="true" signature="3744:3780" ph="{...}" />
+            <marker date="1487613941342" expanded="true" signature="3843:4213" ph="{...}" />
+            <marker date="1487613941342" expanded="true" signature="4247:4307" ph="{...}" />
+            <marker date="1487613941342" expanded="true" signature="4488:5120" ph="{...}" />
+            <marker date="1487613941342" expanded="true" signature="5163:6873" ph="{...}" />
+            <marker date="1487613941342" expanded="true" signature="6681:6819" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ubiety.Dns/Records/IDnsRecord.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+          <folding>
+            <marker date="1487613950721" expanded="true" signature="0:618" ph="/* Copyright 2017 Dieter Lunn ... */" />
+            <marker date="1487613950721" expanded="true" signature="666:938" ph="{...}" />
+            <marker date="1487613950721" expanded="true" signature="700:936" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ubiety.Dns/Query/DnsQueryResponse.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="9" lean-forward="false" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+          <folding>
+            <marker date="1487543748563" expanded="true" signature="0:618" ph="/* Copyright 2017 Dieter Lunn ... */" />
+            <marker date="1487543748563" expanded="true" signature="626:778" ph="..." />
+            <marker date="1487543748563" expanded="true" signature="806:4187" ph="{...}" />
+            <marker date="1487543748563" expanded="true" signature="857:4185" ph="{...}" />
+            <marker date="1487543748563" expanded="true" signature="1227:1378" ph="{...}" />
+            <marker date="1487543748563" expanded="true" signature="1463:4179" ph="{...}" />
+            <marker date="1487543748563" expanded="true" signature="3760:3851" ph="{...}" />
+            <marker date="1487543748563" expanded="true" signature="3903:4011" ph="{...}" />
+            <marker date="1487543748563" expanded="true" signature="4068:4169" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ubiety.Dns/Enums/QueryType.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ubiety.Dns/Extensions/UshortExtensions.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ubiety.Dns/Extensions/StringExtensions.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ubiety.Dns/Resolver.cs" />
+    <entry file="file://$PROJECT_DIR$/Ubiety.Dns/Enums/DnsType.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ubiety.Dns/Enums/QueryClass.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ubiety.Dns/Records/BaseRecord.cs" />
+    <entry file="file://$PROJECT_DIR$/Ubiety.Dns/Enums/OpCode.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ubiety.Dns/Enums/ResponseCode.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="37" lean-forward="false" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ubiety.Dns/RecordReader.cs" />
+    <entry file="file://$PROJECT_DIR$/Ubiety.Dns/ResourceRecord.cs" />
+    <entry file="file://$PROJECT_DIR$/Ubiety.Dns/Header.cs" />
+    <entry file="file://$PROJECT_DIR$/Ubiety.Dns/Enums/DnsFlags.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ubiety.Dns/Records/ARecord.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ubiety.Dns/Enums/DnsClass.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="36" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="13" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ubiety.Dns/Records/SRVRecord.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="9" lean-forward="false" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ubiety.Dns/Records/UnknownRecord.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ubiety.Dns/Records/AAAARecord.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="24" lean-forward="false" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
+          <folding>
+            <marker date="1487391334181" expanded="true" signature="0:624" ph="/* Copyright 2016, 2017 Dieter Lunn ... */" />
+            <marker date="1487391334181" expanded="true" signature="719:1009" ph="{...}" />
+            <marker date="1487391334181" expanded="true" signature="833:854" ph="{...}" />
+            <marker date="1487391334181" expanded="true" signature="944:1003" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ubiety.Dns/Tools.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="18" lean-forward="false" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ubiety.Dns/Query/DnsQueryBase.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1487390191985" expanded="true" signature="0:618" ph="/* Copyright 2017 Dieter Lunn ... */" />
+            <marker date="1487390191985" expanded="true" signature="626:703" ph="..." />
+            <marker date="1487390191985" expanded="true" signature="763:1501" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ubiety.Dns/Records/RecordHeader.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding>
+            <marker date="1487390823330" expanded="true" signature="0:618" ph="/* Copyright 2017 Dieter Lunn ... */" />
+            <marker date="1487390823330" expanded="true" signature="626:692" ph="..." />
+            <marker date="1487390823330" expanded="true" signature="754:3079" ph="{...}" />
+            <marker date="1487390823330" expanded="true" signature="861:1015" ph="{...}" />
+            <marker date="1487390823330" expanded="true" signature="1389:2177" ph="{...}" />
+            <marker date="1487390823330" expanded="true" signature="2220:3073" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DnsTest/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+          <folding>
+            <marker date="1487545269354" expanded="true" signature="6:124" ph="..." />
+            <marker date="1487545269354" expanded="true" signature="181:1229" ph="{...}" />
+            <marker date="1487545269354" expanded="true" signature="234:1223" ph="{...}" />
+            <marker date="1487545269354" expanded="true" signature="368:475" ph="{...}" />
+            <marker date="1487545269354" expanded="true" signature="772:843" ph="{...}" />
+            <marker date="1487545269354" expanded="true" signature="1109:1180" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ubiety.Dns/Records/RecordFactory.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1487391345198" expanded="true" signature="0:618" ph="/* Copyright 2017 Dieter Lunn ... */" />
+            <marker date="1487391345198" expanded="true" signature="626:660" ph="..." />
+            <marker date="1487391345198" expanded="true" signature="723:1601" ph="{...}" />
+            <marker date="1487391345198" expanded="true" signature="794:1595" ph="{...}" />
+            <marker date="1487391345198" expanded="true" signature="991:1506" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ubiety.Dns/Records/DnsRecordBase.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding>
+            <marker date="1487387668443" expanded="true" signature="0:618" ph="/* Copyright 2017 Dieter Lunn ... */" />
+            <marker date="1487387668443" expanded="true" signature="626:669" ph="..." />
+            <marker date="1487387668443" expanded="true" signature="745:3034" ph="{...}" />
+            <marker date="1487387668443" expanded="true" signature="1018:1073" ph="{...}" />
+            <marker date="1487387668443" expanded="true" signature="1139:1217" ph="{...}" />
+            <marker date="1487387668443" expanded="true" signature="1284:2498" ph="{...}" />
+            <marker date="1487387668443" expanded="true" signature="1424:2451" ph="{...}" />
+            <marker date="1487387668443" expanded="true" signature="1475:2437" ph="{...}" />
+            <marker date="1487387668443" expanded="true" signature="2558:2842" ph="{...}" />
+            <marker date="1487387668443" expanded="true" signature="2885:2932" ph="{...}" />
+            <marker date="1487387668443" expanded="true" signature="2973:3028" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ubiety.Dns/Query/DnsQueryResponse.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="9" lean-forward="false" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+          <folding>
+            <marker date="1487543748563" expanded="true" signature="0:618" ph="/* Copyright 2017 Dieter Lunn ... */" />
+            <marker date="1487543748563" expanded="true" signature="626:778" ph="..." />
+            <marker date="1487543748563" expanded="true" signature="806:4187" ph="{...}" />
+            <marker date="1487543748563" expanded="true" signature="857:4185" ph="{...}" />
+            <marker date="1487543748563" expanded="true" signature="1227:1378" ph="{...}" />
+            <marker date="1487543748563" expanded="true" signature="1463:4179" ph="{...}" />
+            <marker date="1487543748563" expanded="true" signature="3760:3851" ph="{...}" />
+            <marker date="1487543748563" expanded="true" signature="3903:4011" ph="{...}" />
+            <marker date="1487543748563" expanded="true" signature="4068:4169" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ubiety.Dns/Query/DnsQueryRequest.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding>
+            <marker date="1487613941342" expanded="true" signature="0:618" ph="/* Copyright 2017 Dieter Lunn ... */" />
+            <marker date="1487613941342" expanded="true" signature="626:753" ph="..." />
+            <marker date="1487613941342" expanded="true" signature="781:6881" ph="{...}" />
+            <marker date="1487613941342" expanded="true" signature="831:6879" ph="{...}" />
+            <marker date="1487613941342" expanded="true" signature="1032:1346" ph="{...}" />
+            <marker date="1487613941342" expanded="true" signature="1483:1711" ph="{...}" />
+            <marker date="1487613941342" expanded="true" signature="1866:2785" ph="{...}" />
+            <marker date="1487613941342" expanded="true" signature="2251:2629" ph="{...}" />
+            <marker date="1487613941342" expanded="true" signature="2865:3340" ph="{...}" />
+            <marker date="1487613941342" expanded="true" signature="2967:3216" ph="{...}" />
+            <marker date="1487613941342" expanded="true" signature="3236:3296" ph="{...}" />
+            <marker date="1487613941342" expanded="true" signature="3420:4352" ph="{...}" />
+            <marker date="1487613941342" expanded="true" signature="3530:4227" ph="{...}" />
+            <marker date="1487613941342" expanded="true" signature="3744:3780" ph="{...}" />
+            <marker date="1487613941342" expanded="true" signature="3843:4213" ph="{...}" />
+            <marker date="1487613941342" expanded="true" signature="4247:4307" ph="{...}" />
+            <marker date="1487613941342" expanded="true" signature="4488:5120" ph="{...}" />
+            <marker date="1487613941342" expanded="true" signature="5163:6873" ph="{...}" />
+            <marker date="1487613941342" expanded="true" signature="6681:6819" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ubiety.Dns/Records/IDnsRecord.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+          <folding>
+            <marker date="1487613950721" expanded="true" signature="0:618" ph="/* Copyright 2017 Dieter Lunn ... */" />
+            <marker date="1487613950721" expanded="true" signature="666:938" ph="{...}" />
+            <marker date="1487613950721" expanded="true" signature="700:936" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ubiety.Dns/Properties/AssemblyInfo.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="38" lean-forward="true" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+          <folding>
+            <marker date="1487616953939" expanded="true" signature="6:63" ph="..." />
+            <marker date="1487616953939" expanded="true" signature="65:194" ph="/* Information about this assembly is defined by the following attributes. ... */" />
+            <marker date="1487616953939" expanded="true" signature="505:729" ph="/* The assembly version has the format &quot;{Major}.{Minor}.{Build}.{Revision}&quot;. ... */" />
+            <marker date="1487616953939" expanded="true" signature="820:1053" ph="/* The following attributes are used to specify the signing key for the assembly, ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ubiety.Dns/DnsHelpers.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="36" lean-forward="false" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+          <folding>
+            <marker date="1487387647263" expanded="true" signature="0:618" ph="/* Copyright 2017 Dieter Lunn ... */" />
+            <marker date="1487387647263" expanded="true" signature="660:1485" ph="{...}" />
+            <marker date="1487387647263" expanded="true" signature="690:1483" ph="{...}" />
+            <marker date="1487387647263" expanded="true" signature="776:1477" ph="{...}" />
+            <marker date="1487387647263" expanded="true" signature="823:880" ph="{...}" />
+            <marker date="1487387647263" expanded="true" signature="915:979" ph="{...}" />
+            <marker date="1487387647263" expanded="true" signature="1125:1353" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
