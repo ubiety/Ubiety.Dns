@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Records\AAAARecordTest.cs" />
+    <Compile Include="Records\ARecordTest.cs" />
     <Compile Include="Records\RecordHeaderTest.cs" />
     <Compile Include="Records\SRVRecordTest.cs" />
   </ItemGroup>

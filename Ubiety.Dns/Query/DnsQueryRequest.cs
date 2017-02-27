@@ -44,7 +44,7 @@ namespace Ubiety.Dns.Query
         public DnsQueryResponse Resolve(string host, QueryType queryType, QueryClass queryClass,
             ProtocolType protocolType)
         {
-            var addressCollection = Tools.DnsServerAddresses();
+            var addressCollection = DnsHelpers.DnsServerAddresses();
             var dnsServer = addressCollection[0].ToString();
 
             return Resolve(dnsServer, host, queryType, queryClass, protocolType);
@@ -157,7 +157,7 @@ namespace Ubiety.Dns.Query
             Array.Resize(ref dnsQuery, len + 2);
             Array.Copy(dnsQuery, 0, dnsQuery, 2, len);
             dnsQuery[0] = (byte) ((len >> 8) & 0xff);
-            dnsQuery[1] = (byte) ((len & 0xff));
+            dnsQuery[1] = (byte) (len & 0xff);
 
             return dnsQuery;
         }

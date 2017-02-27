@@ -14,7 +14,6 @@
 //    limitations under the License.
 
 using System;
-using System.Collections.Generic;
 using System.Net;
 
 namespace Ubiety.Dns.Extensions
@@ -54,9 +53,9 @@ namespace Ubiety.Dns.Extensions
             return (ushort) ((oldValue >> position) & mask);
         }
 
-        public static IEnumerable<byte> Write(this ushort value)
+        public static byte[] Write(this ushort value)
         {
-            return BitConverter.GetBytes(IPAddress.HostToNetworkOrder((short) value));
+            return BitConverter.GetBytes((ushort) IPAddress.HostToNetworkOrder(value) >> 16);
         }
     }
 }

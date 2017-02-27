@@ -13,9 +13,8 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 
-using System;
 using System.IO;
-using System.Net;
+using Ubiety.Dns.Extensions;
 
 namespace Ubiety.Dns.Records
 {
@@ -34,15 +33,15 @@ namespace Ubiety.Dns.Records
         {
             var priority = new byte[2];
             stream.Read(priority, 0, 2);
-            Priority = (ushort) IPAddress.NetworkToHostOrder((short) BitConverter.ToUInt16(priority, 0));
+            Priority = priority.ToUshort();
 
             var weight = new byte[2];
             stream.Read(weight, 0, 2);
-            Weight = (ushort) IPAddress.NetworkToHostOrder((short) BitConverter.ToUInt16(weight, 0));
+            Weight = weight.ToUshort();
 
             var port = new byte[2];
             stream.Read(port, 0, 2);
-            Port = (ushort) IPAddress.NetworkToHostOrder((short) BitConverter.ToUInt16(port, 0));
+            Port = port.ToUshort();
 
             Target = ParseName(ref stream);
 

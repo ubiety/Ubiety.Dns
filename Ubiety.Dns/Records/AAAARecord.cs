@@ -13,24 +13,27 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 
+using System.IO;
 using System.Net;
+using Ubiety.Dns.Extensions;
 
 namespace Ubiety.Dns.Records
 {
     public class AAAARecord : DnsRecordBase
     {
-        private readonly IPAddress _address;
+        private string _address;
 
         public AAAARecord(RecordHeader header) : base(header)
         {
-
         }
 
-        public IPAddress Address => _address;
+        public IPAddress Address => IPAddress.Parse(_address);
 
-        public override string ToString()
+        public override void ParseRecord(ref MemoryStream stream)
         {
-            return Address.ToString();
+            _address =
+                $"{stream.ReadUInt16():X}:{stream.ReadUInt16():X}:{stream.ReadUInt16():X}:{stream.ReadUInt16():X}:{stream.ReadUInt16():X}:{stream.ReadUInt16():X}:{stream.ReadUInt16():X}:{stream.ReadUInt16():X}";
+            Answer = $"Address: {_address}";
         }
     }
 }

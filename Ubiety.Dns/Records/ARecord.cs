@@ -31,7 +31,7 @@ namespace Ubiety.Dns.Records
         public override void ParseRecord(ref MemoryStream stream)
         {
             _address = stream.ReadByte() + "." + stream.ReadByte() + "." + stream.ReadByte() + "." + stream.ReadByte();
-            Answer = "Address: " + _address;
+            Answer = $"Address: {_address}";
         }
     }
 }
